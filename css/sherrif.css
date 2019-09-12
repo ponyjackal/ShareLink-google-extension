@@ -1,0 +1,39 @@
+html {
+  height: 400px;
+}
+body {
+  margin-top: 10px;
+  height:400px;
+  width:400px;
+}
+
+#thetable {
+  width: 75%;
+  height:100%;
+  overflow: scroll;
+  font-size:14px;
+  float: left;
+}
+
+.truncate {
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topicon {
+  height:30px;
+  width:30px;
+  margin-top:10px;
+  margin-left:10px;
+}
+
+.removeicon {
+  height:30px;
+  width:30px;
+}
+.greenbg {
+  background-color: aquamarine;
+}
+.manageusers {float: right;}
+#friends button {float: right;}

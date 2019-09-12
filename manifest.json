@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Sherrif",
+  "description": "A small link sharing extension",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "img/badge.png",
+    "default_popup": "sherrif.html",
+    "default_title": "Sherrif"
+  },
+  "background": {
+    "scripts": ["js/zepto.js","js/pouchdb.js","js/background.js"],
+    "persistent": false
+  },
+  "options_page": "manage.html",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

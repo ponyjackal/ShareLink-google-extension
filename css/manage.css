@@ -1,0 +1,17 @@
+#badge {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+section {
+  float: left;
+}
+p, li, label, input {
+  font-size: 12px;
+}
+div.alert {
+  float: left;
+}

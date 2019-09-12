@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sherrif User Management</title>
+  <link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
+  <link href="css/manage.css" rel="stylesheet" type="text/css">
+  <script src="js/zepto.js"></script>
+  <script src="js/pouchdb.js"></script>
+  <!-- One more script at the bottom because loading.-->
+  
+</head>
+
+<body class="small">
+  <nav><img id="badge" src="img/badge.png">
+    <h1 id="title">Sherrif - Manage Users and Groups</h1>
+  </nav>
+  <form name="users" class="small">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <section id="addfriend">
+            <h2>Add Friend</h2>
+            <div class="input-group-prepend"> <span class="input-group-text">Friend's Name</span>
+              <input id="friendname">
+            </div>
+            <div class="input-group-prepend"> <span class="input-group-text">friends@email</span>
+              <input id="friendemail" type="email">
+            </div>
+            <ul>
+              <li>Name of your friend. Can be whatever you wish.</li>
+              <li>Friend's email. Must match the email they use.</li>
+            </ul>
+          </section>
+          <!-- <section id="creategroup">
+            <h2>Create Group</h2>
+            <div class="input-group-prepend"> <span class="input-group-text">Group Name</span>
+              <input id="groupname">
+            </div>
+            <div class="input-group-prepend"> <span class="input-group-text">group@emails,</span>
+              <textarea id="grouplist"></textarea>
+            </div>
+            <ul>
+              <li>Group Name. Can be whatever you wish.</li>
+              <li>List of email addresses, separated by commas.</li>
+            </ul>
+          </section> -->
+          <section id="userdata">
+            <h2>Your Info</h2>
+            <div class="input-group-prepend"> <span class="input-group-text">User Name</span>
+              <input id="username">
+            </div>
+            <div class="input-group-prepend"> <span class="input-group-text">Your@email</span>
+              <input id="useremail">
+            </div>
+            <ul>
+              <li>User name can be whatever you wish.</li>
+              <li> Your email address. </li>
+            </ul>
+            <button id="settingssave">Save Data</button>
+          </section>
+          <section id="advanced">
+            <h2>Advanced</h2>
+            <label for="couchdburl">Couchdb URL</label>
+            <input id="couchdburl" size="40">
+          </section>
+        </div>
+        <div class="col">
+          <div id="friendslist">
+            <h2>Friends</h2>
+            <div id="insertfriends"></div>
+          </div>
+          <!-- <div id="grouplist">
+            <h2>Groups</h2>
+            <div id="insertgroups"></div>
+          </div> -->
+        </div>
+        <div class="col">
+          <h2>How it works</h2>
+          <h3>Outwardly</h3>
+          This is a simple link sharing extension. It allows you to easily send a link to a friend and have it show up
+          directly in their browser.
+          The basic workflow is:
+          <ol>
+            <li>You and your friend both install this extension.</li>
+            <li>You enter your name and email.</li>
+            <li>You enter your friend's name and email.</li>
+            <li>Your friend enters the same information.</li>
+            <li>When you are on a page you want to send to the friend, click the extension icon in the browser toolbar
+              and
+              click the Save icon. The link is immediately sent to your friend's extension. </li>
+            <li>When your friend sends you a link, it will appear in your list. </li>
+          </ol>
+          <h3>Internally</h3>
+          <ol>
+            <li>When you save link for your friend, it is saved to a <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">internal database</a> within your
+              browser.</li>
+            <li>This data is then synced with a Couchdb server in the cloud (or you can use your own).</li>
+            <li>When your friend opens their browser, their internal database syncs with the same Couchdb server.</li>
+            <li>It pulls down all the links that have their email address attached to it. </li>
+            <li>When you open your browser, your local database is synced with all links that have your email address
+              attached to it.</li>
+          </ol>
+          <p>This is why both users need to use the same email addresses: It is common (foreign) key between the link sharers.</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+<script src="js/manage.js"></script>
+</html>
