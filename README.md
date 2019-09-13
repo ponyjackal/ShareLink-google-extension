@@ -1,5 +1,3 @@
-# Sherrif
-
 A simple link sharing extension based on https://github.com/glynnbird/linkshare
 
 It allows you to share links between other users of this extension. 
